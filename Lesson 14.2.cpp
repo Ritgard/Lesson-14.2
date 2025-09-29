@@ -23,13 +23,9 @@ public:
 	{
 		count--;
 	}
-	void showCount()
+	int showCount()
 	{
-		std::cout << count << std::endl;
-	}
-	void exitProgramm()
-	{
-		exit(0);
+		return count;
 	}
 };
 
@@ -37,8 +33,6 @@ int main()
 {
 	setlocale(LC_ALL, "rus");
 	SetConsoleCP(1251);
-	//SetConsoleOutputCP(1251);
-
 	std::string answer{};
 	std::string userAnswer{};
 	std::cout << "Вы хотите указать начальное значение счетчика? Введите да или нет: ";
@@ -65,11 +59,11 @@ int main()
 			}
 			else if (userAnswer == "=")
 			{
-				c1.showCount();
+				std::cout << c1.showCount() << std::endl;
 			}
 			else if (userAnswer == "х")
 			{
-				c1.exitProgramm();
+				return 0;
 			}
 		}
 	}
@@ -79,7 +73,6 @@ int main()
 		while (true)
 		{
 			std::cout << "Введите команду ('+', '-', '=' или 'x'): ";
-			//std::cin.ignore();
 			std::getline(std::cin, userAnswer);
 			if (userAnswer == "+")
 			{
@@ -91,11 +84,11 @@ int main()
 			}
 			else if (userAnswer == "=")
 			{
-				c1.showCount();
+				std::cout << c1.showCount() << std::endl;
 			}
 			else if (userAnswer == "х")
 			{
-				c1.exitProgramm();
+				return 0;
 			}
 		}
 	}
